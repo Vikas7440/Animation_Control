@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [numBoxes, setNumBoxes] = useState(10);
+  const [numBoxes, setNumBoxes] = useState(15);
   const [numRows, setNumRows] = useState(12);
   const [speed, setSpeed] = useState(100);
   const [isPaused, setIsPaused] = useState(false);
