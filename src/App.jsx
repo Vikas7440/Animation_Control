@@ -153,7 +153,7 @@ function App() {
         </div>
       </div>
 
-      <div className="space-x-4 mb-4 m-2 flex">
+      <div className="space-x-4 mb-4 m-2 flex items-center justify-center">
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={() => setSpeed((prevSpeed) => Math.min(500, prevSpeed + 20))}
