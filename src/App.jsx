@@ -141,21 +141,22 @@ function App() {
       </div>
 
       <div className="space-x-4 mb-4 m-2">
-        <button
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 "
-          onClick={() => setSpeed((prevSpeed) => Math.max(50, prevSpeed - 20))}
-        >
-          Increase Speed
-        </button>
+        
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={() => setSpeed((prevSpeed) => Math.min(500, prevSpeed + 20))}
         >
           Decrease Speed
         </button>
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 "
+          onClick={() => setSpeed((prevSpeed) => Math.max(50, prevSpeed - 20))}
+        >
+          Increase Speed
+        </button>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 ml-4">
         <button
           className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
           onClick={() => setIsPaused((prev) => !prev)}
@@ -171,7 +172,7 @@ function App() {
           overflow: "hidden",
           position: "relative",
         }}
-        className="bg-black"
+        className="bg-black" 
       >
         <div className="border-2">
           {[...Array(numRows)].map((_, rowIndex) => (
