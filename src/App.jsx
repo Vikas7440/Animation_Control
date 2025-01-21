@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [numBoxes, setNumBoxes] = useState(36);
+  const [numBoxes, setNumBoxes] = useState(10);
   const [numRows, setNumRows] = useState(12);
   const [speed, setSpeed] = useState(100);
   const [isPaused, setIsPaused] = useState(false);
@@ -83,36 +83,71 @@ function App() {
       <div className="mb-4">
         <h1 className="text-3xl mb-4">Animation Controls</h1>
         <div className="space-x-4">
-          <label className="text-xl">
-            Number of Columns:
-            <input
-              type="number"
-              value={numBoxes}
-              onChange={(e) => setNumBoxes(Number(e.target.value))}
-              min="1"
-              className="border px-2 py-1"
-            />
-          </label>
-          <label className="text-xl">
-            Number of Rows:
-            <input
-              type="number"
-              value={numRows}
-              onChange={(e) => setNumRows(Number(e.target.value))}
-              min="1"
-              className="border px-2 py-1"
-            />
-          </label>
+        <div>
+ {/* Number of Columns */}
+<label className="text-xl w-full flex flex-col items-center">
+  Number of Columns:
+  <div className="flex items-center gap-2 mt-2">
+    <button
+      onClick={() => setNumBoxes((prev) => Math.max(1, prev - 1))}
+      className="bg-red-500 text-white px-2 py-1 rounded"
+    >
+      -
+    </button>
+    <input
+      type="number"
+      value={numBoxes}
+      onChange={(e) => setNumBoxes(Number(e.target.value))}
+      min="1"
+      className="border px-2 py-1 text-center w-20"
+    />
+    <button
+      onClick={() => setNumBoxes((prev) => prev + 1)}
+      className="bg-green-500 text-white px-2 py-1 rounded"
+    >
+      +
+    </button>
+  </div>
+</label>
+
+{/* Number of Rows */}
+<label className="text-xl w-full flex flex-col items-center mt-4">
+  Number of Rows:
+  <div className="flex items-center gap-2 mt-2">
+    <button
+      onClick={() => setNumRows((prev) => Math.max(1, prev - 1))}
+      className="bg-red-500 text-white px-2 py-1 rounded"
+    >
+      -
+    </button>
+    <input
+      type="number"
+      value={numRows}
+      onChange={(e) => setNumRows(Number(e.target.value))}
+      min="1"
+      className="border px-2 py-1 text-center w-20"
+    />
+    <button
+      onClick={() => setNumRows((prev) => prev + 1)}
+      className="bg-green-500 text-white px-2 py-1 rounded"
+    >
+      +
+    </button>
+  </div>
+</label>
+</div>
+
         </div>
       </div>
 
-      <div className="space-x-4 mb-4">
+      <div className="space-x-4 mb-4 m-2">
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={() => setSpeed((prevSpeed) => Math.max(50, prevSpeed - 20))}
         >
           Increase Speed
         </button>
+        <br></br>
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={() => setSpeed((prevSpeed) => Math.min(500, prevSpeed + 20))}
