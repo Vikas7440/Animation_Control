@@ -39,7 +39,7 @@ function App() {
 
   useEffect(() => {
     if (!isPaused) {
-      const colorInterval = setInterval(handleColorChange, 3000);
+      const colorInterval = setInterval(handleColorChange, 1000);
 
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => {
